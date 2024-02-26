@@ -13,6 +13,6 @@
 - [Webpage (Next.js)](https://github.com/DY-MAKE/withme/tree/main/apps/frontend)
 
 ### Backend
-- [API (Nest.js)](https://github.com/DY-MAKE/withme/tree/main/apps/frontend)
+- [API (Nest.js)](https://github.com/DY-MAKE/withme/tree/main/apps/backend)
 - AI Server
 
