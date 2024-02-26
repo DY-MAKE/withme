@@ -1,3 +1,28 @@
+import { CameraPreview } from '@/components/atoms/CameraPreview';
+import { Card } from '@/components/atoms/Card';
+import { CameraButton } from '@/components/molecules/CameraButton';
+import { cn } from '@/utils/cn';
+
 export default function Home() {
-  return <main></main>;
+  return (
+    <main>
+      <CameraPreview
+        className={cn(
+          'absolute -z-10 min-h-full min-w-full',
+          'bg-zinc-800',
+        )}
+      />
+      <div
+        className={cn(
+          'absolute bottom-0 w-full p-8',
+          'flex flex-col items-center gap-6',
+        )}
+      >
+        <Card className="min-w-64">
+          바나나 옷을 입고 춤을 추는 표현영이 보여요.
+        </Card>
+        <CameraButton />
+      </div>
+    </main>
+  );
 }
