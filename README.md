@@ -1,81 +1,18 @@
-# Turborepo starter
+# 위드미 (WithMe)
 
-This is an official starter Turborepo.
+위드미는 인공지능 기반 시각 장애 보조 어플리케이션 서비스입니다.
 
-## Using this example
+위드미는 [위드미 레거시](https://github.com/DY-MAKE/WithMe-legacy) 프로젝트를 기반으로 하는 새 위드미 프로젝트입니다.
 
-Run the following command:
+<img src="https://user-images.githubusercontent.com/68115707/158518231-e611ac5b-100d-4420-9cfa-a58861aee119.png" width="700" height="370">
 
-```sh
-npx create-turbo@latest
-```
 
-## What's inside?
+## Stacks
 
-This Turborepo includes the following packages/apps:
+### Frontend
+- [Webpage (Next.js)](https://github.com/DY-MAKE/withme/tree/main/apps/frontend)
 
-### Apps and Packages
+### Backend
+- [API (Nest.js)](https://github.com/DY-MAKE/withme/tree/main/apps/frontend)
+- AI Server
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
