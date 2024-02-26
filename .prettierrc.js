@@ -26,6 +26,7 @@ module.exports = {
   plugins: [
     "@trivago/prettier-plugin-sort-imports",
     "@stylistic/eslint-plugin",
+    "prettier-plugin-tailwindcss",
   ],
   importOrderParserPlugins: ["typescript", "decorators-legacy", "jsx"],
 };
