@@ -1,6 +1,6 @@
+import { CameraButton } from '@/components/atoms/CameraButton';
 import { CameraPreview } from '@/components/atoms/CameraPreview';
 import { Card } from '@/components/atoms/Card';
-import { CameraButton } from '@/components/molecules/CameraButton';
 import { cn } from '@/utils/cn';
 
 export default function Home() {
