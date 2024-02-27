@@ -19,7 +19,7 @@ export default function Home() {
         )}
       >
         <Card className="min-w-64">
-          바나나 옷을 입고 춤을 추는 표현영이 보여요.
+          남성 두 명이 책상 앞에 앉아 노트북으로 무언가 작업중이네요.
         </Card>
         <CameraButton />
       </div>
