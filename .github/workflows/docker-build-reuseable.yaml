@@ -31,14 +31,14 @@ jobs:
         uses: actions/download-artifact@v3
         if: ${{ inputs.type == 'frontend'}}
         with:
-          name: node-build-artifact-${{ env.REF_NAME_SHA }}
+          name: node-build-artifact-frontend-${{ env.REF_NAME_SHA }}
           path: ./apps/frontend/.next
 
       - name: Download Build Artifact
         uses: actions/download-artifact@v3
         if: ${{ inputs.type == 'backend'}}
         with:
-          name: node-build-artifact-${{ env.REF_NAME_SHA }}
+          name: node-build-artifact-backend-${{ env.REF_NAME_SHA }}
           path: ./apps/backend/dist
 
       - name: Check dist .next

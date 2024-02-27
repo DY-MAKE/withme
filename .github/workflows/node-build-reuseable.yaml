@@ -54,9 +54,9 @@ jobs:
       - name: Build Node.js
         run: pnpm build --filter ${{ inputs.type }}
 
-      - name: Check dist hash
+      - name: Check dist .next
         if: ${{ inputs.type == 'frontend'}}
-        run: echo ${{ hashFiles('./apps/frontend/dist/**/*') }}
+        run: echo ${{ hashFiles('./apps/frontend/.next/**/*') }}
 
       - name: Check dist hash
         if: ${{ inputs.type == 'backend' }}
@@ -66,12 +66,12 @@ jobs:
         uses: actions/upload-artifact@v3
         if: ${{ inputs.type == 'frontend' }}
         with:
-          name: node-build-artifact-${{ env.REF_NAME_SHA }}
-          path: ./apps/frontend/dist
+          name: node-build-artifact-frontend-${{ env.REF_NAME_SHA }}
+          path: ./apps/frontend/.next
 
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v3
         if: ${{ inputs.type == 'backend' }}
         with:
-          name: node-build-artifact-${{ env.REF_NAME_SHA }}
+          name: node-build-artifact-backend-${{ env.REF_NAME_SHA }}
           path: ./apps/backend/dist
