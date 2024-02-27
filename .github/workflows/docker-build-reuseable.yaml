@@ -32,7 +32,7 @@ jobs:
         if: ${{ inputs.type == 'frontend'}}
         with:
           name: node-build-artifact-${{ env.REF_NAME_SHA }}
-          path: ./apps/frontend/dist
+          path: ./apps/frontend/.next
 
       - name: Download Build Artifact
         uses: actions/download-artifact@v3
@@ -41,9 +41,9 @@ jobs:
           name: node-build-artifact-${{ env.REF_NAME_SHA }}
           path: ./apps/backend/dist
 
-      - name: Check dist hash
+      - name: Check dist .next
         if: ${{ inputs.type == 'frontend'}}
-        run: echo ${{ hashFiles('./apps/frontend/dist/**/*') }}
+        run: echo ${{ hashFiles('./apps/frontend/.next/**/*') }}
 
       - name: Check dist hash
         if: ${{ inputs.type == 'backend'}}
