@@ -50,8 +50,8 @@ jobs:
         run: echo ${{ hashFiles('./apps/backend/dist/**/*') }}
 
       # tonistiigi/binfmt 이미지를 이용해 qemu 설치
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
+      # - name: Set up QEMU
+      #   uses: docker/setup-qemu-action@v2
 
       # docker buildx 설치
       - name: Set up docker buildx
@@ -74,6 +74,6 @@ jobs:
           context: .
           push: true # ghcr에 push
           tags: ${{ env.DOCKER_IMAGE }}:${{ github.run_id }},${{ env.DOCKER_IMAGE }}:latest # 이미지 버전 [이미지 고유 아이디, latest]
-          platforms: linux/arm64
+          # platforms: linux/arm64
           cache-from: type=gha # 여기서 gha 는 Guthub Actions 용 캐시를 의미합니다.
           cache-to: type=gha,mode=max
