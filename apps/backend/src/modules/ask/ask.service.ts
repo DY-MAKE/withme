@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 
 import { CaptionService } from '../caption/caption.service';
 import { AskType } from './ask.interface';
+import { AskResponseDto } from './dto/response/askResponse.dto';
 
 @Injectable()
 export class AskService {
@@ -18,13 +19,15 @@ export class AskService {
   async askWithImage(
     prompt: string,
     image: Express.Multer.File,
-  ): Promise<string> {
+  ): Promise<AskResponseDto> {
     const askType = this.getAskType(prompt);
 
     if (askType === AskType.CAPTION) {
-      return this.captionService.getCaptionForImage(image);
+      return {
+        result: await this.captionService.getCaptionForImage(image),
+      };
     }
 
-    return '명령을 잘 이해하지 못했어요.';
+    return { result: '명령을 잘 이해하지 못했어요.' };
   }
 }

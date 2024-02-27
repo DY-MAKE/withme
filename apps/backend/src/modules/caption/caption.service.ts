@@ -20,17 +20,17 @@ export class CaptionService {
   async getCaptionForImage(image: Express.Multer.File) {
     this.logger.log('getCaptionForImage');
 
-    // const formData = new FormData();
-    // formData.append('image', image.buffer, image.originalname);
+    const formData = new FormData();
+    formData.append('file', image.buffer, image.originalname);
 
     const response = await axios<ImageCaptionResponse>(
       `${this.baseeUrl}/caption`,
       {
         method: 'POST',
         headers: {
-          'Content-Type': 'multipart/form-data',
+          ...formData.getHeaders(),
         },
-        data: image,
+        data: formData,
       },
     ).then((res) => res.data.result);
 

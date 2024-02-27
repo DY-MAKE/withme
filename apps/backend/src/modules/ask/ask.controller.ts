@@ -12,12 +12,14 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import {
   ApiBody,
   ApiConsumes,
+  ApiOkResponse,
   ApiOperation,
   ApiTags,
 } from '@nestjs/swagger';
 
 import { AskService } from './ask.service';
-import { AskDto } from './dto/ask.dto';
+import { AskRequestDto } from './dto/request/askRequest.dto';
+import { AskResponseDto } from './dto/response/askResponse.dto';
 
 @ApiTags()
 @Controller('/api/ask')
@@ -37,10 +39,11 @@ export class AskController {
       },
     },
   })
+  @ApiOkResponse({ type: AskResponseDto })
   @UseInterceptors(FileInterceptor('file'))
   @Post()
   askWithImage(
-    @Query() askDto: AskDto,
+    @Query() askDto: AskRequestDto,
     @UploadedFile(
       new ParseFilePipe({
         validators: [new FileTypeValidator({ fileType: 'image' })],
