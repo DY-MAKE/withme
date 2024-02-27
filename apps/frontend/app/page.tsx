@@ -19,7 +19,7 @@ export default function Home() {
         )}
       >
         <Card className="min-w-64">
-          남성 두 명이 책상 앞에 앉아 노트북으로 무언가 작업중이네요.
+          남자가 책상에 앉아 열심히 개발중이에요.
         </Card>
         <CameraButton />
       </div>
