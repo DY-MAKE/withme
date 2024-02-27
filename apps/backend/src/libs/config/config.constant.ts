@@ -1,0 +1,5 @@
+export enum CONFIG_KEY {
+  NODE_ENV = 'NODE_ENV',
+  PORT = 'PORT',
+  AI_BACKEND_HOST = 'AI_BACKEND_HOST',
+}
